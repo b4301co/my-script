@@ -67,40 +67,68 @@ fi
 
 if [ $var_opcion = 4 ]
 then
+
+	echo ""
+	echo ""
+	echo "[ + ] ( 1 ) - All"
+	echo "[ + ] ( 2 ) - Basic"
+
+	read var_opcion3
 	export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 	export TERM=xterm-256color
-	# APTs
 	apt update -y
-	apt install neovim -y 
-	apt install vifm -y
-	apt install tmux -y
-	apt install curl -y
-	apt install git -y
-	apt install git-core -y 
-	apt install htop -y
-	apt install wget -y
-	apt install git -y
-	apt install neofetch -y
-	apt install tree -y
-	apt install fzf -y
-	apt install pip -y
-	apt-get install python-pip -y
-	apt-get install python3-pip -y
-	apt install npm -y
-	apt install ranger -y
-	apt install apt installueberzug -y
-	apt install ripgrep -y
-	apt install silver_searcher -y
-	apt install fd -y
-	apt install universal-ctags  -y
-	apt install lazy git  -y
-	#CAT
-	wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
-	dpkg -i bat_*
-	rm bat_*
-	wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
-	dpkg -i lsd_*
-	rm lsd_*
+
+	if [ $var_opcion3 = 1 ]
+	then
+		# APTs
+		apt install neovim -y 
+		apt install vifm -y
+		apt install curl -y
+		apt install git-core -y 
+		apt install htop -y
+		apt install wget -y
+		apt install neofetch -y
+		apt install tree -y
+		apt install fzf -y
+		apt install pip -y
+		apt-get install python-pip -y
+		apt-get install python3-pip -y
+		apt install npm -y
+		apt install ranger -y
+		apt install apt installueberzug -y
+		apt install ripgrep -y
+		apt install silver_searcher -y
+		apt install fd -y
+		apt install universal-ctags  -y
+		apt install lazy -y
+		#CAT
+		wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
+		dpkg -i bat_*
+		rm bat_*
+		wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
+		dpkg -i lsd_*
+		rm lsd_*
+	fi
+		if [ $var_opcion3 = 2 ]
+	then
+		# APTs
+		apt install neovim -y 
+		apt install vifm -y
+		apt install curl -y
+		apt install git-core -y 
+		apt install htop -y
+		apt install wget -y
+		apt install tree -y
+		apt install pip -y
+		apt install lazy -y
+		#CAT
+		wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
+		dpkg -i bat_*
+		rm bat_*
+		wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
+		dpkg -i lsd_*
+		rm lsd_*
+	fi
 fi
 if [ $var_opcion = 5 ]
 then
