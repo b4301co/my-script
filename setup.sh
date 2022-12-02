@@ -111,7 +111,7 @@ then
 	fi
 		if [ $var_opcion3 = 2 ]
 	then
-		# APTs Basicas
+		# APTs 
 		apt install neovim -y 
 		apt install vifm -y
 		apt install curl -y
