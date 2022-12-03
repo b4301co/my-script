@@ -9,9 +9,9 @@ echo ""
 echo "[ + ] ( 1 ) - Cambiar Host"
 echo "[ + ] ( 2 ) - Cambiar IP"
 echo "[ + ] ( 3 ) - Cambiar resolv"
-echo "[ + ] ( 4 ) - Instalar apts"
-echo "[ + ] ( 5 ) - Alacritty"
-echo "[ + ] ( 6 ) - Instalar ZSH/OMZsh" 
+echo "[ + ] ( 4 ) - Instalar ZSH/OMZsh" 
+echo "[ + ] ( 5 ) - Instalar apts"
+echo "[ + ] ( 6 ) - Alacritty"
 echo "[ + ] ( 7 ) - Instalar nvim-code"
 echo "[ + ] ( 0 ) - Exit"
 
@@ -65,71 +65,6 @@ then
 	echo "nameserver $new_dns " > /etc/resolv.conf
 fi
 
-if [ $var_opcion = 4 ]
-then
-
-	echo ""
-	echo ""
-	echo "[ + ] ( 1 ) - All"
-	echo "[ + ] ( 2 ) - Basic"
-
-	read var_opcion3
-	export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-	export TERM=xterm-256color
-	apt update -y
-
-	if [ $var_opcion3 = 1 ]
-	then
-		# APTs
-		apt install neovim -y 
-		apt install vifm -y
-		apt install curl -y
-		apt install git-core -y 
-		apt install htop -y
-		apt install wget -y
-		apt install neofetch -y
-		apt install tree -y
-		apt install fzf -y
-		apt install pip -y
-		apt-get install python-pip -y
-		apt-get install python3-pip -y
-		apt install npm -y
-		apt install ranger -y
-		apt install apt installueberzug -y
-		apt install ripgrep -y
-		apt install silver_searcher -y
-		apt install fd -y
-		apt install universal-ctags  -y
-		apt install lazy -y
-		#CAT
-		wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
-		dpkg -i bat_*
-		rm bat_*
-		wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
-		dpkg -i lsd_*
-		rm lsd_*
-	fi
-		if [ $var_opcion3 = 2 ]
-	then
-		# APTs 
-		apt install neovim -y 
-		apt install vifm -y
-		apt install curl -y
-		apt install git-core -y 
-		apt install htop -y
-		apt install wget -y
-		apt install tree -y
-		apt install pip -y
-		apt install lazy -y
-		#CAT
-		wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
-		dpkg -i bat_*
-		rm bat_*
-		wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
-		dpkg -i lsd_*
-		rm lsd_*
-	fi
-fi
 if [ $var_opcion = 5 ]
 then
 	#Alacritty
@@ -165,26 +100,29 @@ then
 	echo "cargo build --release"
 fi
 
-if [ $var_opcion = 6 ]
+if [ $var_opcion = 4 ]
 then
 	echo ""
 	echo ""
 	echo "[ + ] ( 1 ) - All"
-	echo "[ + ] ( 2 ) - ZSH"
-	echo "[ + ] ( 3 ) - OH-MY-ZSH"
-	echo "[ + ] ( 4 ) - Plugins"
-	echo "[ + ] ( 5 ) - Clear"
+	echo "[ + ] ( 2 ) - ZSH basic"
+	echo "[ + ] ( 3 ) - ZSH advanced"
+	echo "[ + ] ( 4 ) - OH-MY-ZSH"
+	echo "[ + ] ( 5 ) - zellij div"
+	echo "[ + ] ( 6 ) - Plugins"
+	echo "[ + ] ( 7 ) - Clear"
 
-	read var_opcion6
+	read var_opcion_4
 
 	mkdir ~/.app_def
 	mkdir ~/.app_def/zsh-plugins
 
-	if [ $var_opcion6 = 1 ]
+	if [ $var_opcion_4 = 1 ]
 	then
 
 		#ZSH
 		apt install zsh -y
+		cp zshrc ~/.zshrc
 		
 		# OHMYZSH + FONTS & STYLES 
 		apt install curl -y
@@ -215,15 +153,25 @@ then
 		source ~/.zshrc	
 	fi
 	
-	if [ $var_opcion6 = 2 ]
+	if [ $var_opcion_4 = 2 ]
 	then
 		#ZSH
 		apt install zsh -y
+		cp zshrcbasic ~/.zshrc
 		cd ~ 
 		source ~/.zshrc	
 	fi
 
-	if [ $var_opcion6 = 3 ]
+	if [ $var_opcion_4 = 3 ]
+	then
+		#ZSH
+		apt install zsh -y
+		cp zshrc ~/.zshrc
+		cd ~ 
+		source ~/.zshrc	
+	fi
+
+	if [ $var_opcion_4 = 4 ]
 	then
 		# OHMYZSH + FONTS & STYLES 
 		apt install curl -y
@@ -243,8 +191,13 @@ then
 		cd ~ 
 		source ~/.zshrc	
 	fi	
+
+	if [ $var_opcion_4 = 5 ]
+	then
+		chmod a+x ~/.app_def/zellij
+	fi
 	
-	if [ $var_opcion6 = 4 ]
+	if [ $var_opcion_4 = 6 ]
 	then
 		#PLUGIN
 		cd ~/.app_def/zsh-plugins
@@ -258,7 +211,7 @@ then
 		source ~/.zshrc	
 	fi
 
-	if [ $var_opcion6 = 5 ]
+	if [ $var_opcion_4 = 7 ]
 	then
 		cd ~ 
 		rm .zshrc
@@ -267,6 +220,73 @@ then
 		rm -rfv .zsh/	
 	fi
 fi
+
+if [ $var_opcion = 5 ]
+then
+
+	echo ""
+	echo ""
+	echo "[ + ] ( 1 ) - All"
+	echo "[ + ] ( 2 ) - Basic"
+
+	read var_opcion_5
+	export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+	export TERM=xterm-256color
+	apt update -y
+
+	if [ $var_opcion_5 = 1 ]
+	then
+		# APTs
+		apt install neovim -y 
+		apt install vifm -y
+		apt install curl -y
+		apt install git-core -y 
+		apt install htop -y
+		apt install wget -y
+		apt install neofetch -y
+		apt install tree -y
+		apt install fzf -y
+		apt install pip -y
+		apt-get install python-pip -y
+		apt-get install python3-pip -y
+		apt install npm -y
+		apt install ranger -y
+		apt install apt installueberzug -y
+		apt install ripgrep -y
+		apt install silver_searcher -y
+		apt install fd -y
+		apt install universal-ctags  -y
+		apt install lazy -y
+		#CAT
+		wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
+		dpkg -i bat_*
+		rm bat_*
+		wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
+		dpkg -i lsd_*
+		rm lsd_*
+	fi
+		if [ $var_opcion_5 = 2 ]
+	then
+		# APTs 
+		apt install neovim -y 
+		apt install vifm -y
+		apt install curl -y
+		apt install git-core -y 
+		apt install htop -y
+		apt install wget -y
+		apt install tree -y
+		apt install pip -y
+		apt install lazy -y
+		#CAT
+		wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
+		dpkg -i bat_*
+		rm bat_*
+		wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
+		dpkg -i lsd_*
+		rm lsd_*
+	fi
+fi
+
 if [ $var_opcion = 7 ]
 then
 	echo ''

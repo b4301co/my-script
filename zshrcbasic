@@ -110,23 +110,23 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-alias ll='lsd -lh --group-dirs=first'
-alias la='lsd -a --group-dirs=first'
-alias l='lsd --group-dirs=first'
-alias lla='lsd -lha --group-dirs=first'
-alias ls='lsd --group-dirs=first'
+alias ll='ls -lh'
+alias la='ls -a'
+alias l='ls'
+alias lla='ls -lha'
+alias ls='ls'
 alias lr='ll -R'
 alias bcat='batcat'
 alias bus='fzf'
 alias rmf='rm -rfv' 
 alias nv='nvim -u ~/.app_def/nvim.conf'
-alias openvpn='sudo openvpn'
 #alias nvim='nvim -u ~/.app_def/nvim.conf'
-alias install='dpkg -i '
 alias whatip='curl https://ipinfo.io/ip' 
 
-
 alias div='~/.app_def/zellij -c ~/.app_def/config.yaml options --disable-mouse-mode'
+
+alias s='sudo'
+#alias drive='rclone mount alkio: ~/alkioDrive &'
 
 pkill kwalletd5
 
