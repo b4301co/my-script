@@ -65,7 +65,7 @@ then
 	echo "nameserver $new_dns " > /etc/resolv.conf
 fi
 
-if [ $var_opcion = 5 ]
+if [ $var_opcion = 6 ]
 then
 	#Alacritty
 	sudo cp alacritty.yml /usr/share
