@@ -92,7 +92,17 @@ then
 	cd /usr/local/share/fonts
 	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
 	unzip Hack.zip
-	rm Hack.zip
+	wget https://rubjo.github.io/victor-mono/VictorMonoAll.zip
+	unzip VictorMonoAll.zip
+	mv VictorMonoAll/TTF/* .
+	
+	mkdir ~/.local/share/fonts
+	cd ~./local/share/fonts
+	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
+	unzip Hack.zip
+	wget https://rubjo.github.io/victor-mono/VictorMonoAll.zip
+	unzip VictorMonoAll.zip
+	mv VictorMonoAll/TTF/* .
 
 	#echo
 	echo "source $HOME/.cargo/env"
