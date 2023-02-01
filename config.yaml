@@ -104,9 +104,13 @@ keybinds:
         - action: [NewPane: ,]
           key: [Char: 'n', Alt: 'n',]
         - action: [NewPane: Down,]
-          key: [Char: 'd',]
+          key: [Char: 's',]
         - action: [NewPane: Right,]
-          key: [Char: 'r',]
+          key: [Char: 'd',]
+        - action: [NewPane: Left,]
+          key: [Char: 'a',]
+        - action: [NewPane: Up,]
+          key: [Char: 'w',]
         - action: [CloseFocus,]
           key: [Char: 'x',]
         - action: [ToggleFocusFullscreen,]
@@ -308,7 +312,7 @@ plugins:
 # Options:
 #   - true
 #   - false (Default)
-#simplified_ui: true
+simplified_ui: true
 
 # Choose the path to the default shell that zellij will use for opening new panes
 # Default: $SHELL
@@ -318,7 +322,7 @@ plugins:
 # Options:
 #   - true
 #   - false (default)
-#no_pane_frames: true
+no_pane_frames: true
 
 # Choose the theme that is specified in the themes section.
 # Default: default
