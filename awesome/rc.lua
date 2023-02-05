@@ -288,6 +288,8 @@ globalkeys = gears.table.join(
     {description = "code", group = "launcher"}),
     awful.key({ modkey, "Control" }, "e", function () awful.spawn("nautilus") end,
     {description = "nautilus", group = "launcher"}),
+    awful.key({ modkey, }, "space", function () awful.spawn("rofi -show run") end,
+    {description = "nautilus", group = "launcher"}),
 
     awful.key({ modkey,           }, "d",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),

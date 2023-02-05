@@ -165,7 +165,17 @@ then
 	echo '\n nitrogen & polybar & picom \n'
 	sudo apt install -y nitrogen polybar picom
 
+	echo '\n Rofi \n'
+	sudo apt install rofi
+	# Themes
+	mkdir -p ~/.config/rofi/themes/
+	git clone https://github.com/lr-tech/rofi-themes-collection.git
+	cd rofi-themes-collection
+	cp themes/* ~/.config/rofi/themes/
+	cd ..
+
 	echo '\n archivos \n'
+	cp nord.rasi ~/.config/rofi/themes
 	mkdir ~/.config/awesome
 	cp ./awesome/* ~/.config/awesome
 	mkdir ~/.config/polybar
@@ -179,4 +189,6 @@ then
 
 	echo '\n NvChad \n'
 	git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+
+
 fi
