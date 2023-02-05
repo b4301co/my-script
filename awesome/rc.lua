@@ -261,7 +261,7 @@ globalkeys = gears.table.join(
               {description = "focus the previous screen", group = "screen"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
-    awful.key({ modkey,           }, "Tab",
+    awful.key({ modkey,           }, "",
         function ()
             awful.client.focus.history.previous()
             if client.focus then
@@ -288,8 +288,12 @@ globalkeys = gears.table.join(
     {description = "code", group = "launcher"}),
     awful.key({ modkey, "Control" }, "e", function () awful.spawn("nautilus") end,
     {description = "nautilus", group = "launcher"}),
-    awful.key({ modkey, }, "space", function () awful.spawn("rofi -show run") end,
-    {description = "nautilus", group = "launcher"}),
+    awful.key({ modkey, "Control" }, "space", function () awful.spawn("rofi -show run") end,
+    {description = "rofi", group = "launcher"}),
+    awful.key({ modkey,           }, "space", function () awful.spawn("rofi -show window") end,
+    {description = "rofi", group = "launcher"}),
+    awful.key({ modkey,  "Shift"  }, "space", function () awful.spawn("rofi -show ssh") end,
+    {description = "rofi", group = "launcher"}),
 
     awful.key({ modkey,           }, "d",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
