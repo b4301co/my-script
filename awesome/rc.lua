@@ -283,6 +283,8 @@ globalkeys = gears.table.join(
 
     awful.key({ modkey, "Control" }, "v", function () awful.spawn("vivaldi") end,
     {description = "vivaldi", group = "launcher"}),
+    awful.key({ modkey, "Control" }, "t", function () awful.spawn("brave-browser") end,
+    {description = "brave-browser ", group = "launcher"}),
     awful.key({ modkey, "Control" }, "f", function () awful.spawn("firefox") end,
     {description = "firefox", group = "launcher"}),
     awful.key({ modkey, "Control" }, "c", function () awful.spawn("code") end,
@@ -296,7 +298,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey,  "Shift"  }, "space", function () awful.spawn("rofi -show ssh -show-icons -theme ~/.config/rofi/themes/rounded-blue-dark") end,
     {description = "rofi", group = "launcher"}),
     awful.key({ modkey,           }, "l", function () awful.spawn("i3lock-everblush") end,
-    {description = "rofi", group = "launcher"}),
+    {description = "i3lock", group = "launcher"}),
 
     awful.key({ modkey,           }, "d",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
