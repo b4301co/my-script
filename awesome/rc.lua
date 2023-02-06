@@ -33,6 +33,7 @@ autorunApps =
 { 
   "picom",  
   "/home/b4391co/.config/polybar/launch.sh",
+  "wg-quick up rpi0"
 }
 if autorun then
    for app = 1, #autorunApps do
@@ -288,11 +289,11 @@ globalkeys = gears.table.join(
     {description = "code", group = "launcher"}),
     awful.key({ modkey, "Control" }, "e", function () awful.spawn("nautilus") end,
     {description = "nautilus", group = "launcher"}),
-    awful.key({ modkey, "Control" }, "space", function () awful.spawn("rofi -show run") end,
+    awful.key({ modkey, "Control" }, "space", function () awful.spawn("rofi -show run -show-icons -theme ~/.config/rofi/themes/rounded-blue-dark") end,
     {description = "rofi", group = "launcher"}),
-    awful.key({ modkey,           }, "space", function () awful.spawn("rofi -show window") end,
+    awful.key({ modkey,           }, "space", function () awful.spawn("rofi -show window -show-icons -theme ~/.config/rofi/themes/rounded-blue-dark") end,
     {description = "rofi", group = "launcher"}),
-    awful.key({ modkey,  "Shift"  }, "space", function () awful.spawn("rofi -show ssh") end,
+    awful.key({ modkey,  "Shift"  }, "space", function () awful.spawn("rofi -show ssh -show-icons -theme ~/.config/rofi/themes/rounded-blue-dark") end,
     {description = "rofi", group = "launcher"}),
     awful.key({ modkey,           }, "l", function () awful.spawn("i3lock-everblush") end,
     {description = "rofi", group = "launcher"}),

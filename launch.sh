@@ -200,13 +200,5 @@ then
 
 	echo '\n Bloqueo \n'
 	sudo apt install slim libpam0g-dev libxrandr-dev libfreetype6-dev libimlib2-dev libxft-dev
-	git clone https://github.com/sam87/slimlock-debian
-	cd slimlock-debian
-	sudo make
-	sudo make install
-	cd ..
-	cd /blue-sky/slim
-	sudo cp slim.conf /etc/
-	sudo cp slimlock.conf /etc
-	sudo cp -r default /usr/share/slim/themes
+
 fi
