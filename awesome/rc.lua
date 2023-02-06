@@ -294,6 +294,8 @@ globalkeys = gears.table.join(
     {description = "rofi", group = "launcher"}),
     awful.key({ modkey,  "Shift"  }, "space", function () awful.spawn("rofi -show ssh") end,
     {description = "rofi", group = "launcher"}),
+    awful.key({ modkey,           }, "l", function () awful.spawn("i3lock-everblush") end,
+    {description = "rofi", group = "launcher"}),
 
     awful.key({ modkey,           }, "d",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),

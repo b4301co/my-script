@@ -1,3 +1,5 @@
+
+
 echo " ____  _  _  _____ ___  _  ____ ___    ____  _____ _____ _   _ ____"
 echo "| __ )| || ||___ // _ \/ |/ ___/ _ \  / ___|| ____|_   _| | | |  _ \ "
 echo "|  _ \| || |_ |_ \ (_) | | |  | | | | \___ \|  _|   | | | | | | |_) |"
@@ -12,8 +14,13 @@ echo "[ + ] ( 4 ) - Instalar ZSH/OMZsh"
 echo "[ + ] ( 5 ) - Instalar apts"
 echo "[ + ] ( 6 ) - Awesome"
 echo "[ + ] ( 0 ) - Exit"
+echo ""
 
 read var_opcion
+
+# VARS
+pwd=`pwd`
+echo $pwd
 
 if [ $var_opcion = 1 ]
 then
@@ -162,8 +169,9 @@ then
 	sudo apt install -y libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson
 	sudo apt install libxcb-dpms0-dev
 	
-	echo '\n nitrogen & polybar & picom \n'
-	sudo apt install -y nitrogen polybar picom
+	echo '\n nitrogen & polybar & picom & theme \n'
+	sudo apt install -y nitrogen polybar picom i3lock #i3lock-everblush
+	git clone https://github.com/VaughnValle/blue-sky
 
 	echo '\n Rofi \n'
 	sudo apt install rofi
@@ -190,5 +198,15 @@ then
 	echo '\n NvChad \n'
 	git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
-
+	echo '\n Bloqueo \n'
+	sudo apt install slim libpam0g-dev libxrandr-dev libfreetype6-dev libimlib2-dev libxft-dev
+	git clone https://github.com/sam87/slimlock-debian
+	cd slimlock-debian
+	sudo make
+	sudo make install
+	cd ..
+	cd /blue-sky/slim
+	sudo cp slim.conf /etc/
+	sudo cp slimlock.conf /etc
+	sudo cp -r default /usr/share/slim/themes
 fi
