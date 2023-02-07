@@ -102,7 +102,7 @@ myawesomemenu = {
                                      { " firefox", "firefox" },
                                      { " vivaldi", "vivaldi" },
                                      { " vs code", "code" },
-                                     { " files", "nautilus" }
+                                     { " files", "thunar" }
                                    }
                          })
  
@@ -289,8 +289,8 @@ globalkeys = gears.table.join(
     {description = "firefox", group = "launcher"}),
     awful.key({ modkey, "Control" }, "c", function () awful.spawn("code") end,
     {description = "code", group = "launcher"}),
-    awful.key({ modkey, "Control" }, "e", function () awful.spawn("nautilus") end,
-    {description = "nautilus", group = "launcher"}),
+    awful.key({ "Mod4" }, "e", function () awful.spawn("thunar") end,
+    {description = "thunar", group = "launcher"}),
     awful.key({ modkey, "Control" }, "space", function () awful.spawn("rofi -show run -show-icons -theme ~/.config/rofi/themes/rounded-blue-dark") end,
     {description = "rofi", group = "launcher"}),
     awful.key({ modkey,           }, "space", function () awful.spawn("rofi -show window -show-icons -theme ~/.config/rofi/themes/rounded-blue-dark") end,
