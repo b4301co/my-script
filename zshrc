@@ -167,7 +167,7 @@ function target(){
     ip_address=$1
     machine_name=$2
     echo "$ip_address $machine_name" > /home/!!!USER!!!/.config/polybar/scripts/target
-    export TIP=$ip_address
+    export T=$ip_address
 }
 
 echo " ____  _  _  _____ ___  _  ____ ___  "
