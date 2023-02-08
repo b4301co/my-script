@@ -1,4 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+ Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -121,12 +121,26 @@ alias bus='fzf'
 alias rmf='rm -rfv' 
 alias nv='nvim -u ~/.app_def/nvim.conf'
 alias openvpn='sudo openvpn'
+alias apt='sudo apt'
+
 #alias nvim='nvim -u ~/.app_def/nvim.conf'
 alias install='dpkg -i '
 alias whatip='curl https://ipinfo.io/ip' 
-
-
+#alias apps='ls /usr/local/bin | grep "exe" && ls /usr/local/bin | grep "365"'
 alias div='~/.app_def/zellij -c ~/.app_def/config.yaml options --disable-mouse-mode'
+alias casa='xfreerdp /v:192.168.1.5 /u:!!!USER@MAIL!!! /cert-ignore /dynamic-resolution +auto-reconnect +clipboard +home-drive'
+
+alias autopsy4='/home/!!!USER!!!/Documentos/apps/autopsy-4.6.0-linux/autopsy-4.18.0/bin/autopsy'
+alias volatility='python2 ~/.local/bin/vol.py'
+alias sherlock='python3 /home/!!!USER!!!/kali/APPS_KALI/sherlock/sherlock/sherlock.py'
+
+alias gitb='git config --global user.name "!!!USER!!!" ; git config --global user.email !!!USER!!!@proton.me ; git config --list'
+alias gitc='git config --global user.name "!!!OTHERUSER!!!" ; git config --global user.email !!!OTHERUSER@MAIL!!! ; git config --list'
+
+alias copy='xclip -sel clip'
+
+alias tor-start='sudo systemctl start tor'
+alias tor-stop='sudo systemctl stop tor'
 
 pkill kwalletd5
 
@@ -143,3 +157,25 @@ export TERM=xterm-256color
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
 # Created by `pipx` on 2022-05-12 20:45:34
+export PATH="$PATH:/home/!!!USER!!!/.local/bin"
+alias drive='rclone mount drive: ~/drive &'
+nitrogen --restore
+sleep 0,1
+clear
+
+function target(){
+    ip_address=$1
+    machine_name=$2
+    echo "$ip_address $machine_name" > /home/!!!USER!!!/.config/polybar/scripts/target
+    export TIP=$ip_address
+}
+
+echo " ____  _  _  _____ ___  _  ____ ___  "
+echo "| __ )| || ||___ // _ \/ |/ ___/ _ \ "
+echo "|  _ \| || |_ |_ \ (_) | | |  | | | |"
+echo "| |_) |__   _|__) \__, | | |__| |_| |"
+echo "|____/   |_||____/  /_/|_|\____\___/ "
+echo ""
+echo ""
+#
+#
