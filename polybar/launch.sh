@@ -14,7 +14,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 polybar log -c ~/.config/polybar/current.ini &
 polybar primary -c ~/.config/polybar/workspace.ini &
 polybar secondary -c ~/.config/polybar/current.ini &
-
+polybar micomponente -c ~/.config/polybar/current.ini &
 
 
 ## Right bar
