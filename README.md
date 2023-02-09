@@ -1,6 +1,6 @@
 # DOTFILES
 
-```
+```sh
 git clone https://github.com/b4391co/dotfiles
 cd dotfiles
 chmod a+x launch.sh
@@ -11,10 +11,9 @@ chmod a+x launch.sh
 
 Para carpetas compartidas:
 
-```
+```sh
 apt install sshfs
 ```
-
 
 crear `/home/USER/.sync.sh`
 
