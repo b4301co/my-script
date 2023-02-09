@@ -140,9 +140,6 @@ alias gitc='git config --global user.name "!!!OTHERUSER!!!" ; git config --globa
 
 alias copy='xclip -sel clip'
 
-alias tor-start='sudo systemctl start tor'
-alias tor-stop='sudo systemctl stop tor'
-
 pkill kwalletd5
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
