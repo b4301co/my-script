@@ -14,12 +14,11 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 polybar log -c ~/.config/polybar/current.ini &
 polybar primary -c ~/.config/polybar/workspace.ini &
 polybar secondary -c ~/.config/polybar/current.ini &
-polybar micomponente -c ~/.config/polybar/current.ini &
+polybar target -c ~/.config/polybar/current.ini &
 
 
 ## Right bar
 #polybar top -c ~/.config/polybar/current.ini &
-polybar public -c ~/.config/polybar/current.ini &
 polybar eth0 -c ~/.config/polybar/current.ini &
 polybar eth1 -c ~/.config/polybar/current.ini &
 polybar tun0 -c ~/.config/polybar/current.ini &
