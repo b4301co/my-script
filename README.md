@@ -45,7 +45,7 @@ rclone mount drive: /home/USER/drive
 
 `/lib/systemd/system/sync.service`
 
-```
+```sh
 [Unit]
 Description=Start script
 
@@ -57,7 +57,7 @@ ExecStart=/home/USER/.sync.sh
 WantedBy=multi-user.target
 ```
 
-```
+```sh
 sudo systemctl daemon-reload
 sudo systemctl start sync.service
 ```
