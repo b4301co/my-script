@@ -21,13 +21,28 @@ crear `/home/USER/.sync.sh`
 ```
 #!/bin/bash
 
-# sync.sh
-sshfs -o IdentityFile=/home/USER/.ssh/id_rsa USER@{IP}:/var/www/html/hugo/content /home/USER/rpi
-rclone mount drive: ~/drive &
+wg-quick up rpi0
+#systemctl start wg-quick@rpi0.service 
+sleep 2
+sshfs -o IdentityFile=/home/b4391co/.ssh/id_rsa b4391co@10.81.9.1:/var/www/html/hugo/content /home/b4391co/rpi
+rclone mount drive: /home/b4391co/drive 
 ```
 
-añadir a `crontab -e`
+`/lib/systemd/system/sync.service`
 
 ```
-@reboot /home/USER/.sync.sh
+[Unit]
+Description=Start script
+
+[Service]
+User=USER
+ExecStart=/home/USER/.sync.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```
+sudo systemctl daemon-reload
+sudo systemctl start sync.service
 ```
