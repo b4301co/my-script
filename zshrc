@@ -133,6 +133,7 @@ alias casa='xfreerdp /v:192.168.1.5 /u:!!!USER@MAIL!!! /cert-ignore /dynamic-res
 alias autopsy4='/home/!!!USER!!!/Documentos/apps/autopsy-4.6.0-linux/autopsy-4.18.0/bin/autopsy'
 alias volatility='python2 ~/.local/bin/vol.py'
 alias sherlock='python3 /home/!!!USER!!!/kali/APPS_KALI/sherlock/sherlock/sherlock.py'
+alias sync='~/.sync.sh'
 
 alias gitb='git config --global user.name "!!!USER!!!" ; git config --global user.email !!!USER!!!@proton.me ; git config --list'
 alias gitc='git config --global user.name "!!!OTHERUSER!!!" ; git config --global user.email !!!OTHERUSER@MAIL!!! ; git config --list'
