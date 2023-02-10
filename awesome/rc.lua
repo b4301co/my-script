@@ -36,8 +36,6 @@ autorunApps =
 { 
     "picom",  
     "/home/b4391co/.config/polybar/launch.sh",
-    "xfce4-terminal",
-    "firefox"
 }
 if autorun then
    for app = 1, #autorunApps do
@@ -368,10 +366,8 @@ end,
 
     awful.key({ modkey, "Control" }, "v", function () awful.spawn("vivaldi") end,
     {description = "vivaldi", group = "launcher"}),
-    awful.key({ modkey, "Control" }, "b", function () awful.spawn("brave-browser") end,
+    awful.key({ modkey, "Control" }, "x", function () awful.spawn("brave-browser") end,
     {description = "brave-browser ", group = "launcher"}),
-    awful.key({ modkey, "Control" }, "x", function () awful.spawn("firefox") end,
-    {description = "firefox", group = "launcher"}),
     awful.key({ modkey, "Control" }, "c", function () awful.spawn("code") end,
     {description = "code", group = "launcher"}),
     awful.key({ "Mod4"            }, "e", function () awful.spawn("thunar") end,
