@@ -16,6 +16,8 @@ apt install sshfs
 ```
 
 añadir en `~.zshrc`
+
+
 ```sh
 var1=`cat ~/.synccount`
 var2='True'
