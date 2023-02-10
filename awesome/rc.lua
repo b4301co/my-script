@@ -34,10 +34,10 @@ end
 autorun = true
 autorunApps = 
 { 
-  "picom",  
-  "/home/b4391co/.config/polybar/launch.sh",
-  "drive",
-  "wg-quick up rpi0"
+    "picom",  
+    "/home/b4391co/.config/polybar/launch.sh",
+    "xfce4-terminal",
+    "firefox"
 }
 if autorun then
    for app = 1, #autorunApps do
