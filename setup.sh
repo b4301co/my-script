@@ -159,6 +159,10 @@ then
 
 		wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
 		
+		git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git\
+		source zsh-snap/install.zsh
+		znap install asdf-vm/asdf aureliojargas/clitest bigH/git-fuzzy ekalinin/github-markdown-toc ohmyzsh/ohmyzsh zsh-users/zsh-completions
+
 		# Fonts
 		cd /usr/local/share/fonts
 		wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip

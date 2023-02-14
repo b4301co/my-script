@@ -142,8 +142,10 @@ alias copy='xclip -sel clip'
 
 pkill kwalletd5
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+#source ~/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source ~/.zsh/zsh-completions/zsh-completions.plugin.zs
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
