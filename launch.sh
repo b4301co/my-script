@@ -97,6 +97,7 @@ then
 
     #PLUGIN
     cd ~/.app_def/zsh-plugins
+	bash <(curl -fSsL https://fig.io/headless.sh) && exec $SHELL
 
     git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
     git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
@@ -148,6 +149,14 @@ then
 		wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
 		dpkg -i lsd_*
 		rm lsd_*
+		https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+
+		# BREW
+		wget https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+		bash ./install.sh
+		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+		brew install fig
+
 	fi
 		if [ $var_opcion_5 = 2 ]
 	then
