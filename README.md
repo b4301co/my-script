@@ -49,3 +49,9 @@ Substituir `!!!USER!!!`
 ```sj
 sed -i 's/!!!USER!!!/NAME/g' doc.ex
 ```
+
+## VSSCODE
+
+```sh
+"pasteImage.insertPattern": "<div align='center'><img src='./.assets/$imageFileName}'/></div>",
+```
