@@ -141,7 +141,7 @@ then
 	if [ $var_opcion_5 = 1 ]
 	then
 		# APTs
-        apt install -y neovim vifm curl git-core htop wget neofetch tree fzf pip python-pip python3-pip npm ranger apt installueberzug ripgrep silver_searcher fd universal-ctags  lazy
+        apt install -y neovim vifm curl git-core htop wget neofetch tree fzf pip python-pip python3-pip npm ranger ueberzug ripgrep silver_searcher fd universal-ctags  lazy
 		#CAT
 		wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
 		dpkg -i bat_*
@@ -174,6 +174,9 @@ fi
 
 if [ $var_opcion = 6 ]
 then
+	echo '\n awesome \n'
+	sudo apt -y update
+	sudo apt install -y awesome
 	echo '\n apts \n'
 	sudo apt install -y libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson
 	sudo apt install libxcb-dpms0-dev
