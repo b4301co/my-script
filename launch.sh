@@ -135,6 +135,7 @@ then
 	echo ""
 	echo "[ + ] ( 1 ) - All"
 	echo "[ + ] ( 2 ) - Basic"
+	echo "[ + ] ( 3 ) - Brew"
 
 	read var_opcion_5
 	export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
@@ -152,14 +153,6 @@ then
 		wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
 		dpkg -i lsd_*
 		rm lsd_*
-		https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
-
-		# BREW
-		wget https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
-		bash ./install.sh
-		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-		brew install fig
-
 	fi
 		if [ $var_opcion_5 = 2 ]
 	then
@@ -172,6 +165,14 @@ then
 		wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
 		dpkg -i lsd_*
 		rm lsd_*
+	fi
+	if [ $var_opcion_5 = 3 ]
+	then
+		# BREW
+		wget https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+		bash ./install.sh
+		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+		brew install fig
 	fi
 fi
 
