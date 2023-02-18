@@ -97,7 +97,7 @@ then
 
     #PLUGIN
     cd ~/.app_def/zsh-plugins
-	bash <(curl -fSsL https://fig.io/headless.sh) && exec $SHELL
+	#echo "bash <(curl -fSsL https://fig.io/headless.sh) && exec $SHELL"
 
     git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
     git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
