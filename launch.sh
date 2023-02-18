@@ -78,7 +78,6 @@ then
 
     #ZSH
     sudo apt install zsh -y
-    cp zshrc ~/.zshrc
     
     # OHMYZSH + FONTS & STYLES 
     sudo apt install curl -y
@@ -94,6 +93,7 @@ then
     cp config.yaml ~/.app_def/config.yaml
     cp web-search.plugin.zsh ~/.app_def/zsh-plugins
     chmod a+x ~/.app_def/zellij
+	sed -i "s/"!!!USER!!!"/$usuario/g" ~/.zshrc
 
     #PLUGIN
     cd ~/.app_def/zsh-plugins
@@ -201,6 +201,8 @@ then
 	mkdir ~/.config/polybar
 	cp -r ./polybar/* ~/.config/polybar
 	cp ./picom.conf ~/.config/
+
+	sed -i "s/"!!!USER!!!"/$usuario/g" ~/.config/awesome/rc.lua
 
 	echo '\n Fonts \n'
 	sudo add-apt-repository ppa:font-manager/staging
