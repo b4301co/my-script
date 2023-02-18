@@ -17,10 +17,10 @@ echo "[ + ] ( 0 ) - Exit"
 echo ""
 
 read var_opcion
-
 # VARS
+
 pwd=`pwd`
-echo $pwd
+usuario=`whoami`
 
 if [ $var_opcion = 1 ]
 then
@@ -176,7 +176,7 @@ if [ $var_opcion = 6 ]
 then
 	echo '\n awesome \n'
 	sudo apt -y update
-	sudo apt install -y awesome
+	sudo apt install -y awesome xfce4-terminal
 	echo '\n apts \n'
 	sudo apt install -y libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson
 	sudo apt install libxcb-dpms0-dev
@@ -186,7 +186,7 @@ then
 	git clone https://github.com/VaughnValle/blue-sky
 
 	echo '\n Rofi \n'
-	sudo apt install rofi
+	sudo apt install -y rofi
 	# Themes
 	mkdir -p ~/.config/rofi/themes/
 	git clone https://github.com/lr-tech/rofi-themes-collection.git
@@ -199,18 +199,18 @@ then
 	mkdir ~/.config/awesome
 	cp ./awesome/* ~/.config/awesome
 	mkdir ~/.config/polybar
-	cp ./polybar/* ~/.config/polybar
-	cp ./picom.conf/* ~/.config/
+	cp -r ./polybar/* ~/.config/polybar
+	cp ./picom.conf ~/.config/
 
 	echo '\n Fonts \n'
 	sudo add-apt-repository ppa:font-manager/staging
-	sudo apt-get update
-	sudo apt-get install font-manager
+	sudo apt -y update
+	sudo apt install -y  font-manager
 
 	echo '\n NvChad \n'
 	git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
 	echo '\n Bloqueo \n'
-	sudo apt install slim libpam0g-dev libxrandr-dev libfreetype6-dev libimlib2-dev libxft-dev
+	sudo apt install -y slim libpam0g-dev libxrandr-dev libfreetype6-dev libimlib2-dev libxft-dev
 
 fi

@@ -35,7 +35,7 @@ autorun = true
 autorunApps = 
 { 
     "picom",  
-    "/home/b4391co/.config/polybar/launch.sh",
+    "/home/!!!USER!!!/.config/polybar/launch.sh",
 }
 if autorun then
    for app = 1, #autorunApps do
@@ -669,5 +669,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 awful.spawn.with_shell("nitrogen --restore")
-local wallpaper_cmd="feh --bg-fill /home/b4391co/Imágenes/wallpaper.png"
+local wallpaper_cmd="feh --bg-fill /home/!!!USER!!!/Imágenes/wallpaper.png"
 os.execute(wallpaper_cmd)
