@@ -203,7 +203,8 @@ then
 	cp ./picom.conf ~/.config/
 
 	sed -i "s/"!!!USER!!!"/$usuario/g" ~/.config/awesome/rc.lua
-
+	sed -i "s/"!!!USER!!!"/$usuario/g" ~/.config/polybar/scripts/target_to_hack.sh
+	
 	echo '\n Fonts \n'
 	sudo add-apt-repository ppa:font-manager/staging
 	sudo apt -y update
