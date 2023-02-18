@@ -118,15 +118,12 @@ then
     sudo mv VictorMonoAll/TTF/* .
     
     mkdir ~/.local/share/fonts
-    cd ~./local/share/fonts
+    cd ~/.local/share/fonts
     wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
     unzip Hack.zip
     wget https://rubjo.github.io/victor-mono/VictorMonoAll.zip
     unzip VictorMonoAll.zip
     mv VictorMonoAll/TTF/* .
-
-    cd ~ 
-    source ~/.zshrc	
 fi
 if [ $var_opcion = 5 ]
 then
