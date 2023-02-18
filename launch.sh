@@ -13,6 +13,7 @@ echo "[ + ] ( 3 ) - Cambiar resolv"
 echo "[ + ] ( 4 ) - Instalar ZSH/OMZsh" 
 echo "[ + ] ( 5 ) - Instalar apts"
 echo "[ + ] ( 6 ) - Awesome"
+echo "[ + ] ( 7 ) - Fonts"
 echo "[ + ] ( 0 ) - Exit"
 echo ""
 
@@ -87,7 +88,7 @@ then
     git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     
     #COPYS
-    cp p10k.zsh.2 ~/.p10k.zsh
+    cp p10k.zsh ~/.p10k.zsh
     cp zshrc ~/.zshrc
     cp zellij ~/.app_def/zellij
     cp config.yaml ~/.app_def/config.yaml
@@ -104,7 +105,10 @@ then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
     wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
-    
+fi
+
+if [ $var_opcion = 7 ]
+then
     # Fonts
     cd /usr/local/share/fonts
     sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
@@ -124,7 +128,6 @@ then
     cd ~ 
     source ~/.zshrc	
 fi
-
 if [ $var_opcion = 5 ]
 then
 
