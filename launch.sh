@@ -145,25 +145,25 @@ then
 	if [ $var_opcion_5 = 1 ]
 	then
 		# APTs
-        apt install -y neovim vifm curl git-core htop wget neofetch tree fzf pip python-pip python3-pip npm ranger ueberzug ripgrep silver_searcher fd universal-ctags  lazy
+        sudo apt install -y neovim vifm curl git-core htop wget neofetch tree fzf pip python-pip python3-pip npm ranger ueberzug ripgrep silver_searcher fd universal-ctags  lazy
 		#CAT
 		wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
-		dpkg -i bat_*
+		sudo dpkg -i bat_*
 		rm bat_*
 		wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
-		dpkg -i lsd_*
+		sudo dpkg -i lsd_*
 		rm lsd_*
 	fi
 		if [ $var_opcion_5 = 2 ]
 	then
 		# APTs 
-        apt install -y neovim  vifm curl git-core  htop wget tree pip lazy
+        sudo apt install -y neovim  vifm curl git-core  htop wget tree pip lazy
 		#CAT
 		wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
-		dpkg -i bat_*
+		sudo dpkg -i bat_*
 		rm bat_*
 		wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
-		dpkg -i lsd_*
+		sudo dpkg -i lsd_*
 		rm lsd_*
 	fi
 	if [ $var_opcion_5 = 3 ]
