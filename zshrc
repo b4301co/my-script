@@ -178,4 +178,5 @@ function target(){
 #echo ""
 #echo ""
 #
+
 neofetch
