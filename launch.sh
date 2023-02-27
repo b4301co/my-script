@@ -130,9 +130,8 @@ then
 
 	echo ""
 	echo ""
-	echo "[ + ] ( 1 ) - All"
-	echo "[ + ] ( 2 ) - Basic"
-	echo "[ + ] ( 3 ) - Brew"
+	echo "\033[32m [ + ] ( 1 ) - All"
+	echo "\033[32m [ + ] ( 2 ) - Basic"
 
 	read var_opcion_5
 	export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
@@ -141,17 +140,127 @@ then
 
 	if [ $var_opcion_5 = 1 ]
 	then
-		# APTs
-        sudo apt install -y neovim vifm curl git-core htop wget neofetch tree fzf pip python-pip python3-pip npm ranger ueberzug ripgrep silver_searcher fd universal-ctags  lazy
-		#CAT
-		wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
-		sudo dpkg -i bat_*
-		rm bat_*
-		wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
-		sudo dpkg -i lsd_*
-		rm lsd_*
+		echo ""
+		echo ""
+		echo '\033[32m install APTS + CAT + LSD ( YES / NO )'
+		echo ""
+		read yesno
+		if [ $yesno = 'YES' ]
+		then
+			echo ""
+			echo ""
+			echo '\033[32m apts'
+			# APTs
+			sudo apt install -y neovim sshfs vifm curl git-core htop wget neofetch tree fzf pip python-pip python3-pip npm ranger ueberzug ripgrep silver_searcher fd universal-ctags  lazy
+			#CAT
+			wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
+			sudo dpkg -i bat_*
+			rm bat_*
+			wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
+			sudo dpkg -i lsd_*
+			rm lsd_*
+		fi
+		echo ""
+		echo ""
+		echo '\033[32m install ZSH + ZSHRC ( YES / NO )'
+		echo ""
+		read yesno
+		if [ $yesno = 'YES' ]
+		then
+			mkdir ~/.app_def
+			mkdir ~/.app_def/zsh-plugins
+
+			#ZSH
+			sudo apt install zsh -y
+			
+			# OHMYZSH + FONTS & STYLES 
+			sudo apt install curl -y
+			sudo apt install wget -y
+			sudo apt install fonts-powerline -y
+			sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -s
+			git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+			
+			#COPYS
+			cp p10k.zsh ~/.p10k.zsh
+			cp zshrc ~/.zshrc
+			cp zellij ~/.app_def/zellij
+			cp config.yaml ~/.app_def/config.yaml
+			cp web-search.plugin.zsh ~/.app_def/zsh-plugins
+			chmod a+x ~/.app_def/zellij
+			sed -i "s/"!!!USER!!!"/$usuario/g" ~/.zshrc
+
+			#PLUGIN
+			cd ~/.app_def/zsh-plugins
+			#echo "bash <(curl -fSsL https://fig.io/headless.sh) && exec $SHELL"
+
+			git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+			git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
+			git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+
+			wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
+		fi
+		echo ""
+		echo ""
+		echo '\033[32m install DOCKER + DOCKER COMPOSE ( YES / NO )'
+		echo ""
+		read yesno
+		if [ $yesno = 'YES' ]
+		then
+			sudo apt -y update
+			sudo apt -y install curl gnupg2 apt-transport-https software-properties-common ca-certificates
+			curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg
+			echo "deb [arch=amd64] https://download.docker.com/linux/debian bullseye stable" | sudo tee  /etc/apt/sources.list.d/docker.list
+			sudo apt -y update
+			sudo apt install -y docker-ce docker-ce-cli containerd.io
+			sudo apt install -y docker.io
+			sudo systemctl enable docker --now
+			sudo usermod -aG docker $USER
+		fi
+		echo ""
+		echo ""
+		echo '\033[32m apps ( !! alias ~/.zshrc )'
+		echo '\033[32m install Osintgram ( YES / NO )'
+		echo ""
+		read yesno
+		if [ $yesno = 'YES' ]
+		then
+			sudo apt-get install python3-venv
+			mkdir ~/kali/
+			mkdir ~/kali/APPS_KALI/
+			cd ~/kali/APPS_KALI/
+			git clone https://github.com/Datalux/Osintgram
+			cd Osintgram
+			pip3 install -r requirements.txt
+			echo "alias osintgram='python3 ~/kali/APPS_KALI/Osintgram/main.py'"
+			python3.11 -m pip install -r requirements.txt
+			echo ""
+			echo ""
+			echo 'Manual: https://github.com/Datalux/Osintgram'
+		fi
+		echo ""
+		echo ""
+		echo 'install BREW ( YES / NO )'
+		echo ""
+		read yesno
+		if [ $yesno = 'YES' ]
+		then
+			# BREW
+			wget https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+			bash ./install.sh
+			eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+			brew install fig
+		fi
+		echo ""
+		echo ""
+		echo '\033[32m install FIG ( YES / NO )'
+		echo ""
+		read yesno
+		if [ $yesno = 'YES' ]
+		then
+			brew install fig
+		fi
 	fi
-		if [ $var_opcion_5 = 2 ]
+	if [ $var_opcion_5 = 2 ]
 	then
 		# APTs 
         sudo apt install -y neovim  vifm curl git-core  htop wget tree pip lazy
@@ -162,14 +271,6 @@ then
 		wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
 		sudo dpkg -i lsd_*
 		rm lsd_*
-	fi
-	if [ $var_opcion_5 = 3 ]
-	then
-		# BREW
-		wget https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
-		bash ./install.sh
-		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-		brew install fig
 	fi
 fi
 

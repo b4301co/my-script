@@ -11,10 +11,6 @@ chmod a+x launch.sh
 
 Para carpetas compartidas:
 
-```sh
-apt install sshfs
-```
-
 añadir en `~.profile`
 ```sh
 logger "[ psync ] Comienza la sincronizacion"
