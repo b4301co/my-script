@@ -136,7 +136,7 @@ then
 	read var_opcion_5
 	export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 	export TERM=xterm-256color
-	apt update -y
+	sudo apt update -y
 
 	if [ $var_opcion_5 = 1 ]
 	then
