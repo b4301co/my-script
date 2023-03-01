@@ -165,7 +165,7 @@ then
 		sudo mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
 		sudo systemctl enable docker --now
 		sudo usermod -aG docker $USER
-		echo "alias dexec='docker exec -it'" >> .zshrc
+		echo "alias dexec='docker exec -i -t'" >> .zshrc
 	fi
 	echo ""
 	echo ""
