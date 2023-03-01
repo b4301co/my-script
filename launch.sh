@@ -145,6 +145,7 @@ then
 	fi
 	echo ""
 	echo ""
+	echo '\033[32m apps ( !! alias ~/.zshrc )'
 	echo '\033[32m install DOCKER + DOCKER COMPOSE ( To install "YES" )'
 	echo ""
 	read yesno
@@ -164,6 +165,7 @@ then
 		sudo mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
 		sudo systemctl enable docker --now
 		sudo usermod -aG docker $USER
+		echo "alias dexec='docker exec -it'" >> .zshrc
 	fi
 	echo ""
 	echo ""
