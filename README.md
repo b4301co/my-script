@@ -51,3 +51,10 @@ sed -i 's/!!!USER!!!/NAME/g' doc.ex
 ```sh
 "pasteImage.insertPattern": "<div align='center'><img src='./.assets/$imageFileName}'/></div>",
 ```
+
+Si repso de kali no funcionan:
+
+```
+sudo su
+wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add
+```
