@@ -43,7 +43,7 @@ nitrogen --restore
 Substituir `!!!USER!!!`
 
 ```sj
-sed -i 's/!!!USER!!!/NAME/g' doc.ex
+sed -i 's/!!!USER!!!/$USER/g' .profile
 ```
 
 ## VSSCODE
