@@ -95,7 +95,7 @@ then
 		echo '\033[32m apts'
 		# APTs
 		sudo apt update -y
-		sudo apt install -y neovim sshfs vifm curl git-core htop wget neofetch tree fzf pip python-pip python3-pip npm ranger ueberzug ripgrep silver_searcher fd universal-ctags  lazy
+		sudo apt install -y python3-launchpadlib software-properties-common neovim sshfs vifm curl git-core htop wget neofetch tree fzf pip python-pip python3-pip npm ranger ueberzug ripgrep silver_searcher fd universal-ctags  lazy
 		#CAT
 		wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
 		sudo dpkg -i bat_*
@@ -103,6 +103,12 @@ then
 		wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
 		sudo dpkg -i lsd_*
 		rm lsd_*
+		wget https://az764295.vo.msecnd.net/stable/92da9481c0904c6adfe372c12da3b7748d74bdcb/code_1.76.0-1677667493_amd64.deb
+		sudo dpkg -i code_*
+		rm code_*
+		wget https://objects.githubusercontent.com/github-production-release-asset-2e65be/90902132/872b5742-ed80-46ec-88db-c9d13064cb10?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230303%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230303T021701Z&X-Amz-Expires=300&X-Amz-Signature=96172ecf7aca53933f9bf2f44253777eb7840c0c8cfa33b329872982b61f7486&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=90902132&response-content-disposition=attachment%3B%20filename%3Dflameshot-12.1.0-1.debian-10.amd64.deb&response-content-type=application%2Foctet-stream
+		sudo dpkg -i flame*
+		rm flame*
 	fi
 	echo ""
 	echo ""
@@ -135,8 +141,13 @@ then
 
 		#PLUGIN
 		cd ~/.app_def/zsh-plugins
-		#echo "bash <(curl -fSsL https://fig.io/headless.sh) && exec $SHELL"
+		git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+		git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
+		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
+		wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
+
+		cd ~/.zsh
 		git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 		git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
 		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
@@ -166,6 +177,16 @@ then
 		sudo systemctl enable docker --now
 		sudo usermod -aG docker $USER
 		echo "alias dexec='docker exec -i -t'" >> .zshrc
+	fi
+	echo ""
+	echo ""
+	echo '\033[32m SYNCS ( To install "YES" )'
+	echo ""
+	read yesno
+	if [ $yesno = 'YES' ]
+	then
+		sudo apt install -y sshfs rclone wireguard 
+		echo '\033[32m rclone config' 
 	fi
 	echo ""
 	echo ""
@@ -219,10 +240,10 @@ then
 	then
 		echo '\n awesome \n'
 		sudo apt -y update
-		sudo apt install -y awesome xfce4-terminal
+		sudo apt install -y awesome xfce4-terminal arandr
 		echo '\n apts \n'
 		sudo apt install -y libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson
-		sudo apt install libxcb-dpms0-dev
+		sudo apt install -y libxcb-dpms0-dev
 		
 		echo '\n nitrogen & polybar & picom & theme \n'
 		sudo apt install -y nitrogen polybar picom i3lock #i3lock-everblush
