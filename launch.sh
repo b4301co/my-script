@@ -95,7 +95,7 @@ then
 		echo '\033[32m apts'
 		# APTs
 		sudo apt update -y
-		sudo apt install -y python3-launchpadlib software-properties-common neovim sshfs vifm curl git-core htop wget neofetch tree fzf pip python-pip python3-pip npm ranger ueberzug ripgrep silver_searcher fd universal-ctags  lazy
+		sudo apt install -y neofetch python3-launchpadlib software-properties-common neovim sshfs vifm curl git-core htop wget neofetch tree fzf pip python-pip python3-pip npm ranger ueberzug ripgrep silver_searcher fd universal-ctags  lazy
 		#CAT
 		wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
 		sudo dpkg -i bat_*
@@ -220,7 +220,7 @@ then
 		wget https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 		bash ./install.sh
 		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-		brew install fig
+		#brew install fig
 	fi
 	echo ""
 	echo ""
@@ -278,7 +278,23 @@ then
 		git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
 		echo '\n Bloqueo \n'
-		sudo apt install -y slim libpam0g-dev libxrandr-dev libfreetype6-dev libimlib2-dev libxft-dev
+		sudo apt install -y slim libpam0g-dev libxrandr-dev libfreetype6-dev libimlib2-dev libxft-dev i3lock-color
+		git clone https://github.com/Raymo111/i3lock-color.git
+		cd i3lock-color
+		./build.sh
+		./install-i3lock-color.sh
+		cd ..
+		rm -rfv i3lock-color
+		echo ""
+		echo ""
+		echo '\033[32m DESCAARGAR https://www.opendesktop.org/p/1908883'
+		
+
+		echo ""
+		echo ""
+		echo '\033[32m configuar monitores'
+		echo '\033[32m [bar]'
+		echo '\033[32m monitor = ${env:MONITOR:eDP-1}'
 	fi
 	echo ""
 	echo ""
