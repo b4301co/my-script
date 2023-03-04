@@ -96,6 +96,7 @@ then
 		# APTs
 		sudo apt update -y
 		sudo apt install -y neofetch python3-launchpadlib software-properties-common neovim sshfs vifm curl git-core htop wget neofetch tree fzf pip python-pip python3-pip npm ranger ueberzug ripgrep silver_searcher fd universal-ctags  lazy
+		sudo apt install -y build-essential git vim xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev libxcb-xtest0-dev libxcb-shape0-dev
 		#CAT
 		wget https://github.com/sharkdp/bat/releases/download/v0.19.0/bat_0.19.0_amd64.deb
 		sudo dpkg -i bat_*
@@ -185,7 +186,7 @@ then
 	read yesno
 	if [ $yesno = 'YES' ]
 	then
-		sudo apt install -y sshfs rclone wireguard 
+		sudo apt install -y sshfs rclone wireguard resolvconf
 		echo '\033[32m rclone config' 
 	fi
 	echo ""
@@ -262,9 +263,32 @@ then
 		cp nord.rasi ~/.config/rofi/themes
 		mkdir ~/.config/awesome
 		cp ./awesome/* ~/.config/awesome
-		mkdir ~/.config/polybar
-		cp -r ./polybar/* ~/.config/polybar
 		cp ./picom.conf ~/.config/
+
+		echo ""
+		echo ""
+		echo '\033[32m Polybar Virtual machine ( To install "YES" )'
+		echo ""
+		read yesno
+		if [ $yesno = 'YES' ]
+		then
+			mkdir ~/.config/polybar
+			cp -r ./polybarVM/* ~/.config/polybar
+			cp ./picom.conf ~/.config/
+		else
+			echo ""
+			echo ""
+			echo '\033[32m Polybar Real ( To install "YES" )'
+			echo ""
+			read yesno
+			if [ $yesno = 'YES' ]
+			then
+				mkdir ~/.config/polybar
+				cp -r ./polybarR/* ~/.config/polybar
+			fi
+		fi
+
+		
 
 		sed -i "s/"!!!USER!!!"/$usuario/g" ~/.config/awesome/rc.lua
 		sed -i "s/"!!!USER!!!"/$usuario/g" ~/.config/polybar/scripts/target_to_hack.sh
@@ -272,8 +296,10 @@ then
 		echo '\n Fonts \n'
 		sudo add-apt-repository ppa:font-manager/staging
 		sudo apt -y update
-		sudo apt install -y  font-manager
-
+		sudo apt install -y  font-manager pamixer
+		cd polybarVM/fonts
+		sudo cp * /usr/share/fonts/truetype/
+		cd ../..
 		echo '\n NvChad \n'
 		git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
@@ -288,6 +314,20 @@ then
 		echo ""
 		echo ""
 		echo '\033[32m DESCAARGAR https://www.opendesktop.org/p/1908883'
+		sudo apt-get install -y fonts-material-design-icons-iconfont
+		mkdir font
+		cd font
+		curl -o Iosevka.zip https://fontlot.com/downfile\?post_id\=105610\&post_slug\=iosevka-font-family\&pf_nonce\=aa4aa4d7d6
+		unzip Iosevka.zip
+		curl -o icomoon.zip https://codeload.github.com/Keyamoon/IcoMoon-Free/zip/refs/heads/master
+		unzip icomoon.zip
+		cp *.ttf ~/.local/share/fonts
+		sudo cp *.ttf /usr/share/fonts
+		cd IcoMoon-Free-master
+		cp *.ttf ~/.local/share/fonts
+		sudo cp *.ttf /usr/share/fonts		
+		cd../..
+		rm -rfv ./font
 		
 
 		echo ""
