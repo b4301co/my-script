@@ -263,29 +263,19 @@ then
 		cp nord.rasi ~/.config/rofi/themes
 		mkdir ~/.config/awesome
 		cp ./awesome/* ~/.config/awesome
-		cp ./picom.conf ~/.config/
+		mkdir ~/.config/polybar
+		cp -r ./polybarR/* ~/.config/polybar
+		cp ./picomR.conf ~/.config/picom.conf
 
 		echo ""
 		echo ""
-		echo '\033[32m Polybar Virtual machine ( To install "YES" )'
+		echo '\033[32m Polybar / Picom Virtual machine ( To install "YES" )'
 		echo ""
 		read yesno
 		if [ $yesno = 'YES' ]
 		then
-			mkdir ~/.config/polybar
 			cp -r ./polybarVM/* ~/.config/polybar
-			cp ./picom.conf ~/.config/
-		else
-			echo ""
-			echo ""
-			echo '\033[32m Polybar Real ( To install "YES" )'
-			echo ""
-			read yesno
-			if [ $yesno = 'YES' ]
-			then
-				mkdir ~/.config/polybar
-				cp -r ./polybarR/* ~/.config/polybar
-			fi
+			cp ./picomVM.conf ~/.config/picom.conf
 		fi
 
 		
