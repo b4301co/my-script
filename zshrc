@@ -140,6 +140,9 @@ alias gitc='git config --global user.name "!!!OTHERUSER!!!" ; git config --globa
 
 alias copy='xclip -sel clip'
 
+alias wifiscan='nmcli dev wifi'
+alias battery="acpi | awk '{print $4}' | awk -F ',' '{print $1 }'"
+
 pkill kwalletd5
 
 #source ~/powerlevel10k/powerlevel10k.zsh-theme
@@ -158,10 +161,10 @@ export LIBVIRT_DEFAULT_URI=qemu:///system
 
 # Created by `pipx` on 2022-05-12 20:45:34
 export PATH="$PATH:/home/!!!USER!!!/.local/bin"
-alias drive='rclone mount drive: ~/drive &'
 nitrogen --restore
 sleep 0,1
 clear
+
 
 function target(){
     ip_address=$1
