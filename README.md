@@ -1,4 +1,4 @@
-# DOTFILES
+# DOTFILES DEBIAN ( DESACTUALIZADO )
 
 ```sh
 git clone https://github.com/USER/dotfiles
